@@ -22,12 +22,14 @@ export class HomeComponent implements OnInit {
   }
 
   goLogin() {
-    this.router.navigate(['login', { rol: this.rolUsuario }]);
+    localStorage.setItem("Usuario",this.rolUsuario);
+    this.router.navigate(['login']);
 
   }
 
   goRegistration() {
-    this.router.navigate(['registration', { rol: this.rolUsuario }]);
+    localStorage.setItem("Usuario",this.rolUsuario);
+    this.router.navigate(['registration']);
   }
 
   chooseRol(rolUsuario: string) {

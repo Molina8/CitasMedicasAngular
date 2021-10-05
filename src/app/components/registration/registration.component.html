@@ -1,82 +1,91 @@
 <div class="container" >
+
     <div *ngIf="paciente" class="container mx-auto mt-5">
       <h3 class="text-center">Registrar paciente</h3>
-      <form [formGroup]="pacienteForm" class="row g-3">
-        <div class="col-md-6">
+      <form [formGroup]="pacienteForm">
+
+        <div class="col-md-4" id="colCentered">
           <label for="id" class="form-label">Id</label>
-          <input type="number" formControlName="id" class="form-control" id="inputId">
+          <input type="number" formControlName="id" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4" id="colCentered">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" formControlName="nombre" class="form-control" id="inputNombre">
+          <input type="text" formControlName="nombre" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4" id="colCentered">
           <label for="apellidos" class="form-label">Apellidos</label>
-          <input type="text" formControlName="apellidos" class="form-control" id="inputApellidos">
+          <input type="text" formControlName="apellidos" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4" id="colCentered">
           <label for="nickUsuario" class="form-label">Nombre de usuario</label>
-          <input type="text" formControlName="nickUsuario" class="form-control" id="inpuNickUsuario">
+          <input type="text" formControlName="nickUsuario" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4" id="colCentered">
           <label for="clave" class="form-label">Contraseña</label>
-          <input type="password" formControlName="clave" class="form-control" id="inputPassword" >
+          <input type="password" formControlName="clave" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4" id="colCentered">
           <label for="nss" class="form-label">NSS</label>
-          <input type="text" formControlName="nss" class="form-control" id="inputNSS" >
+          <input type="text" formControlName="nss" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4" id="colCentered">
           <label for="numTarjeta" class="form-label">Número Tarjeta</label>
-          <input type="text" formControlName="numTarjeta" class="form-control" id="inputTarjeta">
+          <input type="text" formControlName="numTarjeta" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4" id="colCentered">
           <label for="telefono" class="form-label">Teléfono</label>
-          <input type="text" formControlName="telefono" class="form-control" id="inputPhone">
+          <input type="text" formControlName="telefono" class="form-control">
         </div>
-        <div class="col-12">
+        <div class="col-md-4" id="colCentered">
           <label for="direccion" class="form-label">Dirección</label>
-          <input type="text" formControlName="direccion" class="form-control" id="inputAddress">
+          <input type="text" formControlName="direccion" class="form-control">
         </div>
-        <div class="col-12 mt-2">
-          <button type="submit" class="btn btn-primary" (click)="onSubmit()">Registrarse</button>
-          <button class="btn btn-secondary" (click)="goHome()">Volver</button>
+        <div class="col-md-4" id="colCentered">
+          <button type="submit" class="btn btn-primary" id="cardInput" (click)="onSubmit()">Registrarse</button>
+          <button class="btn btn-secondary" id="cardInput" (click)="goHome()">Volver</button>
         </div>
+
       </form>
     </div>
   
+
+
     <div *ngIf="!paciente" class="container mx-auto mt-5">
       <h3 class="text-center">Registrar médico</h3>
       <form [formGroup]="medicoForm" class="row g-3">
-        <div class="col-md-6">
+
+        <div class="col-md-6" id="colCentered">
           <label for="id" class="form-label">Id</label>
-          <input type="number" formControlName="id" class="form-control" id="inputId">
+          <input type="number" formControlName="id" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="colCentered">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" formControlName="nombre" class="form-control" id="inputNombre1">
+          <input type="text" formControlName="nombre" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="colCentered">
           <label for="apellidos" class="form-label">Apellidos</label>
-          <input type="text" formControlName="apellidos" class="form-control" id="inputApellidos1">
+          <input type="text" formControlName="apellidos" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="colCentered">
           <label for="nickUsuario" class="form-label">Nombre de usuario</label>
-          <input type="text" formControlName="nickUsuario" class="form-control" id="inputnickUsuario1">
+          <input type="text" formControlName="nickUsuario" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="colCentered">
           <label for="clave" class="form-label">Contraseña</label>
-          <input type="password" formControlName="clave" class="form-control" id="inputPassword1">
+          <input type="password" formControlName="clave" class="form-control">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="colCentered">
           <label for="numColegiado" class="form-label">Número colegiado</label>
-          <input type="text" formControlName="numColegiado" class="form-control" id="inputColegiado1">
+          <input type="text" formControlName="numColegiado" class="form-control">
         </div>
-        <div class="col-md-12" id="cardInput">
+
+        <div class="col-md-6" id="colCentered">
           <button type="submit" class="btn btn-primary" id="cardInput" (click)="onSubmit()">Registrarse</button>
           <button type="submit" class="btn btn-secondary" id="cardInput" (click)="goHome()">Volver</button>
         </div>
   
       </form>
     </div>
-  </div>
+
+
+</div>

@@ -17,20 +17,19 @@ export class RegistrationComponent implements OnInit {
   pacienteForm!: FormGroup;
   medicoForm!: FormGroup;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private formBuilder: FormBuilder,
-    private medicoService: MedicoService,
-    private pacienteService: PacienteService,
-    
-  )
-  {}
+  constructor(private route: ActivatedRoute,private router: Router,private formBuilder: FormBuilder,
+    private medicoService: MedicoService,private pacienteService: PacienteService){
+      var usuario = localStorage.getItem("Usuario");
+      if (usuario=="Paciente")
+        this.paciente = true;
+      else
+        this.paciente = false;
+    }
 
   ngOnInit() {
-    this.paciente = this.route.snapshot.params['paciente'] == "true";
-
+    
     this.pacienteForm = this.formBuilder.group({
+      id: ['', Validators.required],
       nombre: ['', Validators.required],
       apellidos: ['', Validators.required],
       nickUsuario: ['', Validators.required],
@@ -42,6 +41,7 @@ export class RegistrationComponent implements OnInit {
     });
 
     this.medicoForm = this.formBuilder.group({
+      id: ['', Validators.required],
       nombre: ['', Validators.required],
       apellidos: ['', Validators.required],
       nickUsuario: ['', Validators.required],
@@ -50,15 +50,14 @@ export class RegistrationComponent implements OnInit {
     });
   }
   goHome() {
+    localStorage.clear();
     this.router.navigate(['']);
   }
 
   onSubmit() {
     this.submitted = true;
 
-    // Paciente
     if (this.paciente) {
-
       if (this.pacienteForm.invalid) {
         alert("Error de validación")
         return;
@@ -68,10 +67,9 @@ export class RegistrationComponent implements OnInit {
         .pipe(first())
         .subscribe(
           data => {
-
-              alert("Paciente creado");
-              console.info(data);
-
+            alert("Paciente creado");
+            console.info(data);
+            localStorage.clear();
             this.router.navigate(['']);
           },
           error => {
@@ -79,9 +77,7 @@ export class RegistrationComponent implements OnInit {
             console.info(error);
           }
       );
-    // Medico
     } else {
-
       if (this.medicoForm.invalid){
         alert("Error de validación")
         return;
@@ -91,10 +87,9 @@ export class RegistrationComponent implements OnInit {
         .pipe(first())
         .subscribe(
           data => {
-
             alert("Médico creado");
             console.info(data);
-
+            localStorage.clear();
             this.router.navigate(['']);
           },
           error => {
