@@ -1,0 +1,43 @@
+
+
+<div class="card" style="text-align: center;">
+    <h3 style="color: rgb(8, 123, 189);">Usuario: {{medico.nombre}} {{medico.apellidos}}</h3>
+</div>
+
+
+
+<div class="card" style="text-align: center;">
+    <h2>Datos del paciente</h2>
+</div>
+
+
+<table class="table table-hover table-bordered" id="tableCitas">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">NSS</th>
+        <th scope="col">Tarjeta</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{paciente.id}}</td>
+            <td>{{paciente.nombre}}</td>
+            <td>{{paciente.apellidos}}</td>
+            <td>{{paciente.nss}}</td>
+            <td>{{paciente.numTarjeta}}</td>
+            <td>{{paciente.direccion}}</td>
+            <td>{{paciente.telefono}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="text-align: center;">
+    <button class="btn btn-primary" id="cardInput" (click)="verMenu()">Menú</button>
+    <button class="btn btn-primary" id="cardInput" (click)="verCitas()">Citas</button>
+  </div>
+  

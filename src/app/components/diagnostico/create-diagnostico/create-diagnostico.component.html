@@ -1,0 +1,42 @@
+<div class="container mx-auto mt-5">
+
+      <div class="card" style="text-align: center;">
+
+        <ng-container *ngIf="medicoBool; else elseNotMedico">
+              <h3 style="color: rgb(8, 123, 189);">Usuario: {{ medico.nombre }} {{ medico.apellidos }} </h3>
+        </ng-container>
+
+        <ng-template #elseNotMedico>
+              <h3 style="color: rgb(8, 123, 189);">Usuario: {{ paciente.nombre }} {{ paciente.apellidos }} </h3>
+        </ng-template>
+
+      </div>
+
+
+    <h3 class="text-center">Registrar diagnóstico</h3>
+
+    <form [formGroup]="diagnosticoForm">
+
+      <div class="col-md-6" id="colCentered">
+        <label for="id" class="form-label">Cita</label>
+        <input type="number" formControlName="id" class="form-control" id="inputId">
+      </div>
+
+      <div class="col-md-6" id="colCentered">
+        <label for="valoracionEspecialista" class="form-label">Valoración</label>
+        <input type="text" formControlName="valoracionEspecialista" class="form-control" id="inputvaloracionEspecialista">
+      </div>
+
+      <div class="col-md-6" id="colCentered">
+        <label for="enfermedad" class="form-label">Enfermedad</label>
+        <input type="text" formControlName="enfermedad" class="form-control" id="inpuEnfermedad">
+      </div>
+
+      <div class="col-md-6" id="colCentered">
+        <button type="submit" class="btn btn-primary" id="cardInput" (click)="onSubmit()">Crear diagnóstico</button>
+        <button type="submit" class="btn btn-secondary" id="cardInput" (click)="verMenu()">Volver al menú</button>
+      </div>
+
+    </form>
+    
+  </div>

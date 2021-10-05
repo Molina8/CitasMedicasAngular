@@ -1,0 +1,46 @@
+<div class="row d-flex justify-content-center">
+
+
+    <div class="card" style="text-align: center;">
+        <h3 style="color: rgb(8, 123, 189);">Usuario: {{medico.nombre}} {{medico.apellidos}}</h3>
+    </div>
+
+    <div class="card" style="text-align: center;">
+        <h2>Panel de gestión para médicos</h2>
+    </div>
+
+
+    <div class="col-md-4" id="menuColumn">
+      <div class="card" id=menuCard>
+        <div class="text-center" id="menuHeader"> Consultas </div>
+          <ul class="list-group">
+            <li class="list-group-item" id="menuItem" (click)="verCitas()">Citas</li>
+            <li class="list-group-item" id="menuItem" (click)="verPacientes()">Pacientes</li>
+            
+          </ul>
+       </div> 
+    </div>
+      
+
+    <div class="col-md-4" id="menuColumn">
+      <div class="card" id=menuCard>
+        <div class="text-center" id="menuHeader"> Añadir </div>
+          <ul class="list-group">
+            <li class="list-group-item" id="menuItem" (click)="crearCita()">Cita</li>
+            <li class="list-group-item" id="menuItem" (click)="crearDiagnostico()">Diagnóstico</li>
+          </ul>
+      </div>
+    </div>
+        
+ 
+    <div class="col-md-4" id="menuColumn">
+      <div class="card" id=menuCard>
+        <div class="text-center" id="menuHeader"> Salir </div>
+          <ul class="list-group">
+            <li class="list-group-item" id="menuItem" (click)="logout()">Cerrar sesión</li>
+          </ul>
+      </div>
+    </div>
+        
+    
+</div>

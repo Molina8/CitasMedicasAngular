@@ -1,0 +1,33 @@
+<div class="col-md-6">
+  <div class="card" id="cardLogin">
+    <form [formGroup]="loginForm"  >
+      
+      
+      <h3>Iniciar sesión </h3>
+
+      <div class="card" id="cardInput">
+        <div class="card-body">
+          <label for="userText">Nombre de usuario</label>
+          <input type="text" formControlName="nickUsuario" class="form-control" id="userText">
+        </div>
+      </div>
+
+      <div class="card" id="cardInput">
+        <div class="card-body">
+          <label for="claveText">Contraseña</label>
+          <input type="password" formControlName="clave" class="form-control" id="claveText"> 
+        </div>
+      </div>
+
+      <div>
+          <button id="cardInput" type="submit" class="btn btn-primary" (click)="onSubmit()">Iniciar sesión</button>
+          <button id="cardInput" class="btn btn-secundary" (click)="goHome()">Volver</button>
+      </div>
+
+
+    </form>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,87 @@
+<div *ngIf="!logged">
+
+    <div *ngIf="!chosenRol">
+
+        <h2 style="text-align: center;">Usuario</h2>
+        <p style="text-align: center;">Selecciona el tipo de usuario para iniciar sesión o registrarte en el sistema</p>
+      
+        <div class="col-md-6">
+          <div class="card" id="cardButton" (click)="chooseRol('Médico')">
+            <div class="card-img-top">
+              <div class="material-icons">local_hospital</div>
+            </div>
+            <h5 class="card-title">Médico</h5>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card" id="cardButton" (click)="chooseRol('Paciente')">
+            <div class="card-img-top">
+              <span class="material-icons">sick</span>
+            </div>
+            <h5 class="card-title">Paciente</h5>
+          </div>
+        </div>        
+
+    </div>
+
+    <div *ngIf="chosenRol" >
+
+      <h2 style="text-align: center;">{{rolUsuario}}</h2>
+      <p style="text-align: center;">Inicia sesión o registrate</p>
+
+      <div class="col-md-6">
+        <div class="card" id="cardButton" (click)="goLogin()">
+          <div class="card-img-top">
+            <span class="material-icons">login</span>
+          </div>
+          <h5 class="card-title">Inicio</h5>
+        </div>
+      </div>  
+
+
+      <div class="col-md-6">
+        <div class="card" id="cardButton" (click)="goRegistration()">
+          <div class="card-img-top">
+            <span class="material-icons">app_registration</span>
+          </div>
+          <h5 class="card-title">Registro</h5>
+        </div>
+      </div>  
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="mb-4">
+
+
+    <div *ngIf="!logged" class="container mt-5 mb-5" style="height: 45rem;">
+  
+
+
+      <div *ngIf="chosenRol" class="card mx-auto align-middle" style="width: 30rem;">
+        <div class="card-body">
+          <button type="button" class="btn btn-primary btn-lg btn-block" (click)="goLogin()">Iniciar sesión</button>
+          <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="goRegister()">Registrarse</button>
+        </div>
+      </div>
+  
+    </div>
+
+
+    <button *ngIf="logged">Sesion iniciada</button>
+
+
+    
+
+  </div> -->
+

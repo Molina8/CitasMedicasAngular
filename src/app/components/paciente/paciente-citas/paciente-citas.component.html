@@ -1,0 +1,40 @@
+<div class="row d-flex justify-content-center">
+
+
+    <div class="card" style="text-align: center;">
+        <h3 style="color: rgb(8, 123, 189);">Usuario: {{paciente.nombre}} {{paciente.apellidos}}</h3>
+    </div>
+  
+  
+    <div class="card" style="text-align: center;">
+        <h2>Listado de citas</h2>
+    </div>
+  
+  
+      <table class="table table-hover table-bordered" id="tableCitas">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Medico</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Motivo</th>
+              <th scope="col">Diagnóstico</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let cita of citas">
+                  <td>{{cita.id}}</td>
+                  <td (click)="verMedico(cita.medico)" id="tableButton">{{cita.medico}}</td>
+                  <td>{{cita.fechaHora}}</td>
+                  <td>{{cita.motivoCita}}</td>
+                  <td (click)="verDiagnostico(cita.id)" id="tableButton">Diagnóstico</td>
+                </tr>
+          </tbody>
+        </table>
+      
+        <div class="card" style="text-align: center;">
+          <button class="btn btn-primary" (click)="verMenu()">Menú</button>
+        </div>
+  
+      </div>
+  
